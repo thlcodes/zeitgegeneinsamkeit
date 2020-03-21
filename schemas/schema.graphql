@@ -1,0 +1,15 @@
+enum Sex {
+  Female
+  Male
+  Diverse
+}
+
+type User {
+  name: String!
+  birthday: Date!
+  sex: Sex!
+}
+
+type Query {
+  Users: [User]
+}
