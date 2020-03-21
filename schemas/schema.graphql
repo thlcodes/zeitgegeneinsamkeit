@@ -4,14 +4,7 @@ enum Sex {
   Diverse
 }
 
-enum oppositeSex {
-  Female
-  Male
-  Diverse
-  Else
-}
-
-enum timeOption {
+enum TimeOption {
   To15
   To30
   Over30
@@ -19,34 +12,43 @@ enum timeOption {
 
 type User {
   id: ID!
-  username: String!
+  username: String
+  email: String
+  phone: String
   firstname: String!
   lastname: String!
   sex: Sex!
   birthday: Date!
-  accepted_agb: Boolean
+  accepted_agb_at: Date!
   image: String
-  talk_time: timeOption!
-  talk_sex: oppositeSex!
-  interests: String
+  interests: [Interest!]
 }
-
 
 type UserVolunteer {
   id: ID!
-  username: String!
+  username: String
+  email: String!
+  phone: String!
   firstname: String!
   lastname: String!
   sex: Sex!
   birthday: Date!
-  email: String!
-  accepted_agb: Boolean
+  accepted_agb_at: Date!
   image: String
-  talk_time: timeOption!
-  talk_sex: oppositeSex!
-  available_day: String
-  available_time: String
-  interests: String
+  talk_time: TimeOption!
+  talk_sex: [Sex!]!
+  interests: [Interest!]
+}
+
+type AvailableTimeslots {
+  id: ID!
+  volunteer_id: ID!
+  slots: [TimeSpan]
+}
+
+type TimeSpan {
+  from: Date!
+  to: Date!
 }
 
 type Interest {
@@ -55,7 +57,7 @@ type Interest {
 }
 
 type Query {
-  Users: [User]
-  UsersVolunteer: [UserVolunteer]
-  Interests: [Interest]
+  allUsers: [User!]!
+  allVolunteers: [UserVolunteer!]!
+  interests: [Interest]
 }
