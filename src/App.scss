@@ -1,0 +1,14 @@
+@import "@material/typography/mdc-typography";
+
+:root {
+  --padding: 1.5em;
+}
+
+body {
+  padding: 1em var(--padding);
+}
+
+pre {
+  white-space: pre-wrap;
+  width: calc(100vw-var(--padding) * 3);
+}
