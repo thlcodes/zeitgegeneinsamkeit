@@ -37,23 +37,25 @@ type UserVolunteer {
   image: String
   talk_time: TimeOption!
   talk_sex: [Sex!]!
-  interests: [Interest!]
+  interests: [Interest!] @relation
 }
 
 type AvailableTimeslots {
   id: ID!
   volunteer_id: ID!
-  slots: [TimeSpan]
+  slots: [TimeSpan] @relation
 }
 
 type TimeSpan {
   from: Date!
   to: Date!
+  parent: [AvailableTimeslots!] @relation
 }
 
 type Interest {
   id: ID!
   name: String!
+  parent: 
 }
 
 type Query {
