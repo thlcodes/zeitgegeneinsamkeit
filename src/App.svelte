@@ -16,7 +16,7 @@
         body: '{ "query": "' + query + '" }'
       });
       const json = await res.json(); // {"data":{"Users":{"data":[{"name":"Dörte"}]}}}
-      name = json.data.Users.data[0].name;
+      name = json.data.Users.data[0].firstname;
     } catch (err) {
       alert(err);
     }
