@@ -55,7 +55,6 @@ type TimeSpan {
 type Interest {
   id: ID!
   name: String!
-  parent: 
 }
 
 type Query {
