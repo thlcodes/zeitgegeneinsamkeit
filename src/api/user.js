@@ -3,7 +3,7 @@ import * as consts from "../constants";
 
 export const createUser = async user => {
   const query =
-    user.userType == consts.TAG_REGTYPE_HELPER
+    user.userType == consts.TAG_HELPER
       ? `mutation createUser($user: UserInput!) {
 	    createUser(data: $user) {
         _id

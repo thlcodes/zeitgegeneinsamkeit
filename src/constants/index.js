@@ -1,3 +1,7 @@
+// ap
+
+export const APP_NAME = "Richtig Verbunden";
+
 // page urls
 
 export const PAGE_START = "/start";
@@ -14,17 +18,43 @@ export const PAGE_CALL = "/call";
 
 // tags
 
-export const TAG_REGTYPE_SENIOR = "senior";
-export const TAG_REGTYPE_FRIEND = "friend";
-export const TAG_REGTYPE_HELPER = "helper";
+export const TAG_SENIOR = "senior";
+export const TAG_FRIEND = "friend";
+export const TAG_HELPER = "helper";
+
+// texts
+
+export const TEXT_SENIOR = "Senior/in";
+export const TEXT_HELPER = "Freiwillige/r";
 
 // texts maps
 
-export const REGTYPE_MAP = {
-  [TAG_REGTYPE_SENIOR]: "Senior/in",
-  [TAG_REGTYPE_FRIEND]: "Freund/in eine/s Senior/in",
-  [TAG_REGTYPE_HELPER]: "Freiwillig/e"
+export const TEXTMAP_USERTYPE = {
+  [TAG_SENIOR]: TEXT_SENIOR,
+  [TAG_FRIEND]: "Freund/in eine/s Senior/in",
+  [TAG_HELPER]: TEXT_HELPER
 };
+
+export const TEXTS_INTERESTS = [
+  "Sport",
+  "Fußball",
+  "Reisen",
+  "Kochen - Lieblingsrezepte",
+  "Spiele",
+  "Technische Fragen",
+  "Familie",
+  "Beruf",
+  "Heimwerk/Hobby",
+  "Gesundheit",
+  "Wirtschaft/Gesellschaft",
+  "Musik",
+  "Theater",
+  "Kunst",
+  "Film und Fernsehen",
+  "Literatur",
+  "Wissenschaft",
+  "Religion + Spiritualität"
+];
 
 // api
 

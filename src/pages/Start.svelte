@@ -1,52 +1,90 @@
 <script>
   import { Link } from "svelte-routing";
-  import Button from "@smui/button";
+  import Button from "../components/Button.svelte";
+  import Section from "../components/Section.svelte";
+  import Heading from "../components/Heading.svelte";
+  import Subheading from "../components/Subheading.svelte";
+  import Subsubheading from "../components/Subsubheading.svelte";
+  import Line from "../components/Line.svelte";
   import * as consts from "../constants";
 </script>
 
 <style>
-  :root {
-    text-align: center;
-  }
-  h1 {
-    text-align: center;
-  }
-
-  .buttons {
-    margin-top: 2em;
+  .container {
     display: flex;
     flex-direction: column;
   }
+  .text {
+    margin-bottom: var(--inset);
+  }
+  .actions {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-end;
+  }
 
-  .login {
-    margin-top: 3em;
+  .actions .label {
+    flex: 1;
+    display: inline-block;
   }
 </style>
 
-<h1>Start</h1>
+<Heading inset={1} title="Registrieren" />
 
-<pre>
-  Mollit mollit laborum cillum culpa. Mollit deserunt voluptate laboris ea
-  mollit ad veniam incididunt dolor occaecat minim. Officia aliqua nisi amet
-  nostrud consectetur tempor et nostrud dolore enim et. Aute nulla sit cillum
-  proident. Reprehenderit elit qui excepteur tempor cillum qui esse adipisicing
-  adipisicing esse eu eiusmod nulla et.
-</pre>
+<Section>
+  <div class="container">
+    <Subheading title={consts.TEXT_SENIOR} />
+    <div class="text">
+      Id ea et eiusmod incididunt officia nulla sint excepteur est velit mollit
+      consectetur aliquip. Sit ad ea nisi ex duis nulla qui mollit incididunt
+      ullamco amet.
+    </div>
+    <Line />
+    <div class="actions">
+      <div class="label">
+        <Subsubheading title="Sind Sie ein/e {consts.TEXT_SENIOR}?" />
+      </div>
+      <Button goto="{consts.PAGE_REGISTER}/{consts.TAG_SENIOR}">
+        registrieren
+      </Button>
+    </div>
+    <Line />
+    <div class="actions">
+      <div class="label">
+        <Subsubheading title="Sind Sie ein/e {consts.TEXT_SENIOR}?" />
+      </div>
+      <Button disabled goto="{consts.PAGE_REGISTER}/{consts.TAG_FRIEND}">
+        registrieren
+      </Button>
+    </div>
+  </div>
+</Section>
 
-<div class="buttons">
-  {#each Object.keys(consts.REGTYPE_MAP) as tag}
-    <Button>
-      <Link to="{consts.PAGE_REGISTER}/{tag}">
-        Registrieren als
-        <b>{consts.REGTYPE_MAP[tag]}</b>
-      </Link>
+<Section level="2">
+  <div class="container">
+    <Subsubheading title={consts.TEXT_HELPER} />
+    <div class="text">
+      Id ea et eiusmod incididunt officia nulla sint excepteur est velit mollit
+      consectetur aliquip. Sit ad ea nisi ex duis nulla qui mollit incididunt
+      ullamco amet.
+    </div>
+    <div class="actions">
+      <Button goto="{consts.PAGE_REGISTER}/{consts.TAG_HELPER}">
+        registrieren
+      </Button>
+    </div>
+  </div>
+</Section>
+
+<Section level="3">
+  <div class="container">
+    <Subsubheading title="Log in" />
+    <Button disabled goto="{consts.PAGE_LOGIN}/{consts.TAG_SENIOR}">
+      Als {consts.TEXT_SENIOR}
     </Button>
-  {/each}
-</div>
-
-<div class="login">
-  Oder bist du bereits registriert? Dann auf zum
-  <Button>
-    <Link to={consts.PAGE_LOGIN}>Login</Link>
-  </Button>
-</div>
+    <Button disabled goto="{consts.PAGE_LOGIN}/{consts.TAG_HELPER}">
+      Als {consts.TEXT_HELPER}
+    </Button>
+  </div>
+</Section>

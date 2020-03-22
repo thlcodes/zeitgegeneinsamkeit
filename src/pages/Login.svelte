@@ -15,7 +15,7 @@
 <div>
   <Button
     on:click={() => {
-      next(consts.TAG_REGTYPE_SENIOR);
+      next(consts.TAG_SENIOR);
     }}>
     Weiter als Senior
   </Button>
@@ -23,7 +23,7 @@
 <div>
   <Button
     on:click={() => {
-      next(consts.TAG_REGTYPE_HELPER);
+      next(consts.TAG_HELPER);
     }}>
     Weiter als Freiwilliger
   </Button>

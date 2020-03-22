@@ -5,12 +5,7 @@
 
   import userStore from "../stores/user";
 
-  export let userId;
-
   let user = {};
-  userStore.subscribe(u => {
-    user = { ...u };
-  });
 </script>
 
 <h2>{user.name}'s Profil</h2>

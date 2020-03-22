@@ -1,14 +1,64 @@
-@import "@material/typography/mdc-typography";
+@import url("https://fonts.googleapis.com/css?family=DM+Serif+Display|DM+Serif+Text|Roboto:300&display=swap");
 
 :root {
-  --app-x-padding: 1.5em;
+  --background-global: #ffd11b;
+  --background-main: white;
+  --background-section-1: #51539e;
+  --background-section-2: #2a2b65;
+  --background-section-3: #0b0d42;
+
+  --text-color-dark: black;
+  --text-color-light: white;
+
+  --font-family-heading: "DM Serif Display", serif;
+  --font-family-button: "DM Serif Text", serif;
+  --font-family-subsubheading: "DM Serif Text", serif;
+  --font-family-body: "Roboto", sans-serif;
+
+  --font-weight-heading: 400;
+  --font-weight-body: 300;
+  --font-weight-button: 400;
+
+  --font-size-heading: 28px;
+  --font-size-subheading: 21px;
+  --font-size-subsubheading: 14px;
+  --font-size-button: 14px;
+
+  --radius-main: 25px;
+  --radius-section: 15px;
+
+  --inset: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  color: var(--text-color-dark);
+}
+
+a:link,
+a:visited,
+a:active {
+  color: inherit;
 }
 
 body {
-  padding: 1em var(--app-x-padding);
+  background-color: var(--background-global);
 }
 
-pre {
-  white-space: pre-wrap;
-  width: calc(100vw-var(--app-x-padding) * 3);
+ul {
+  margin-left: 0px;
+  padding-left: 0px;
+  list-style-position: inside;
+}
+
+input {
+  outline: none;
 }

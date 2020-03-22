@@ -1,93 +1,43 @@
-*Looking for a shareable component template? Go here --> [sveltejs/component-template](https://github.com/sveltejs/component-template)*
+# Richtig Verbunden - Webapp
+
+Diese Webapp entstand im Rahmen des Hackathons #wirvsvirus 2_012_c_socialdistancing-ideeteam-5
 
 ---
 
-# svelte app
+- [Vorschau/Demo](https://richtigverbundenapp.netlify.com/)
+- [Devpost](https://devpost.com/software/2_012_c_socialdistancing-ideeteam-5pluszeitgegeneinsamkeit)
+- [Video](https://youtu.be/E-lJsn0882w)
 
-This is a project template for [Svelte](https://svelte.dev) apps. It lives at https://github.com/sveltejs/template.
+---
 
-To create a new project based on this template using [degit](https://github.com/Rich-Harris/degit):
+## Projektbeschreibung
 
-```bash
-npx degit sveltejs/template svelte-app
-cd svelte-app
-```
+##### Das Problem
 
-*Note that you will need to have [Node.js](https://nodejs.org) installed.*
+Aufgrund von Social Distancing leiden vor allem ältere Menschen unter Einsamkeit und wünschen sich jemanden zum Reden. Auf der anderen Seite gibt es Millionen junger Menschen, die etwas Zeit übrig haben und Gutes tun wollen.
 
+##### Unsere Lösung
 
-## Get started
+Auf “Richtig Verbunden” vernetzen sich Menschen mit ähnlichen Interessen und tauschen sich regelmäßig aus. Die Dialogpartner:innen begegnen sich dabei auf Augenhöhe; Wissen und Erfahrung fließt in beide Richtung und auf Wunsch können persönliche Beziehungen und emotionale Bindungen entstehen.
 
-Install the dependencies...
+In der von uns entwickelten Web-App können sich Freiwillige wie Senioren ganz einfach registrieren und werden dann gemäß ihrer Interessen mit einem:r Gesprächspartner:in gematcht.
 
-```bash
-cd svelte-app
-npm install
-```
+Es ist uns wichtig, alle interessierten Senioren gleichermaßen zu erreichen und durch einfache und kostenfreie Anmeldung zu ermutigen bei “Richtig Verbunden” mitzumachen. Das Wohl und die Sicherheit der Senioren stehen im Vordergrund, ebenso wichtig sind Coaching und Support der Freiwilligen.
 
-...then start [Rollup](https://rollupjs.org):
+##### Das macht uns besonders
 
-```bash
-npm run dev
-```
+“Richtig Verbunden” hebt sich von anderen Gesprächsangeboten und Hotlines deutlich ab, indem dauerhafte Freundschaften entstehen, der Fokus auf bereichernden Gesprächen liegt, statt auf Beratung oder therapeutischen Themen und wir über Social Media eine große Menge an Freiwilligen gewinnen, die von Mentoren und Coaches begleitet werden.
 
-Navigate to [localhost:5000](http://localhost:5000). You should see your app running. Edit a component file in `src`, save it, and reload the page to see your changes.
+---
 
-By default, the server will only respond to requests from localhost. To allow connections from other computers, edit the `sirv` commands in package.json to include the option `--host 0.0.0.0`.
+### Technik
 
+Zur Umsetzung wurden mehrere Technologien und Anbieter verbunden.
 
-## Building and running in production mode
-
-To create an optimised version of the app:
-
-```bash
-npm run build
-```
-
-You can run the newly built app with `npm run start`. This uses [sirv](https://github.com/lukeed/sirv), which is included in your package.json's `dependencies` so that the app will work when you deploy to platforms like [Heroku](https://heroku.com).
-
-
-## Single-page app mode
-
-By default, sirv will only respond to requests that match files in `public`. This is to maximise compatibility with static fileservers, allowing you to deploy your app anywhere.
-
-If you're building a single-page app (SPA) with multiple routes, sirv needs to be able to respond to requests for *any* path. You can make it so by editing the `"start"` command in package.json:
-
-```js
-"start": "sirv public --single"
-```
-
-
-## Deploying to the web
-
-### With [now](https://zeit.co/now)
-
-Install `now` if you haven't already:
-
-```bash
-npm install -g now
-```
-
-Then, from within your project folder:
-
-```bash
-cd public
-now deploy --name my-project
-```
-
-As an alternative, use the [Now desktop client](https://zeit.co/download) and simply drag the unzipped project folder to the taskbar icon.
-
-### With [surge](https://surge.sh/)
-
-Install `surge` if you haven't already:
-
-```bash
-npm install -g surge
-```
-
-Then, from within your project folder:
-
-```bash
-npm run build
-surge public my-project.surge.sh
-```
+- (Progressive) Webapp
+  - [Svelte](https://svelte.dev/)
+- Datenbank
+  - gehostet auf [FaunaDB](https://fauna.com/)
+  - angebunden über GraphQL
+- Hosting und Deployment
+  - [Netlyfy](https://www.netlify.com/)

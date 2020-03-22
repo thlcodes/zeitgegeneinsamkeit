@@ -29,7 +29,7 @@
   });
 
   let isSenior = false;
-  $: user && (isSenior = user.userType == consts.TAG_REGTYPE_SENIOR);
+  $: user && (isSenior = user.userType == consts.TAG_SENIOR);
 </script>
 
 <style>
