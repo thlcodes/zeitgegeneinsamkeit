@@ -6,17 +6,17 @@
   import * as consts from "../constants";
 
   import { get } from "svelte/store";
-  import { registration } from "../stores";
+  import regStore from "../stores/registration";
 
-  export let typ = "";
+  export let userType = "";
 
   let accepted = false;
 
-  $: registration.update(r => {
-    return { ...r, typ };
+  $: regStore.update(r => {
+    return { ...r, userType };
   });
 
-  $: typText = consts.REGTYPE_MAP[typ];
+  $: typText = consts.REGTYPE_MAP[userType];
 </script>
 
 <style>

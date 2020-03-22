@@ -1,24 +1,23 @@
 <script>
   import { onMount } from "svelte";
-  import { registration } from "../stores";
+  import regStore from "../stores/registration";
   import { navigate } from "svelte-routing";
   import Button from "@smui/button";
   import { Link } from "svelte-routing";
 
   import * as consts from "../constants";
 
-  let typ;
-
-  registration.subscribe(r => {
-    typ = r.typ;
+  let userType;
+  regStore.subscribe(r => {
+    userType = r.userType;
   });
 
   onMount(() => {
-    typ === "" && navigate("/", { replace: true });
+    userType === "" && navigate("/", { replace: true });
   });
 </script>
 
-Legal (für {consts.REGTYPE_MAP[typ]})
+Legal (für {consts.REGTYPE_MAP[userType]})
 <pre>
   Ipsum pariatur nulla velit nostrud mollit sit sit irure laboris. Cillum
   ullamco amet amet veniam proident. Eiusmod Lorem incididunt tempor consequat
@@ -56,5 +55,5 @@ Legal (für {consts.REGTYPE_MAP[typ]})
 </pre>
 
 <Button enabled={false}>
-  <Link to={consts.PAGE_PROFILE}>Akzeptieren</Link>
+  <Link to={consts.PAGE_CREATEPROFILE}>Akzeptieren</Link>
 </Button>

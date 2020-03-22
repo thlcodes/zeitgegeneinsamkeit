@@ -1,11 +1,30 @@
 <script>
   import Button from "@smui/button";
-  import { Link } from "svelte-routing";
+  import { navigate } from "svelte-routing";
   import * as consts from "../constants";
+  import userStore from "../stores/user";
+
+  function next(type) {
+    userStore.set({ name: "Peter", userType: type });
+    navigate(consts.PAGE_DASHBOARD);
+  }
 </script>
 
 <h2>Login</h2>
 
-<Button>
-  <Link to={consts.PAGE_DASHBOARD}>Weiter</Link>
-</Button>
+<div>
+  <Button
+    on:click={() => {
+      next(consts.TAG_REGTYPE_SENIOR);
+    }}>
+    Weiter als Senior
+  </Button>
+</div>
+<div>
+  <Button
+    on:click={() => {
+      next(consts.TAG_REGTYPE_HELPER);
+    }}>
+    Weiter als Freiwilliger
+  </Button>
+</div>
