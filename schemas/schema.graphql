@@ -21,7 +21,7 @@ type User {
   birthday: Date!
   accepted_agb_at: Date!
   image: String
-  interests: [Interest!]
+  interests: [String!]
 }
 
 type UserVolunteer {
@@ -37,7 +37,7 @@ type UserVolunteer {
   image: String
   talk_time: TimeOption!
   talk_sex: [Sex!]!
-  interests: [Interest!] @relation
+  interests: [String!]
 }
 
 type AvailableTimeslots {
@@ -52,13 +52,13 @@ type TimeSpan {
   parent: [AvailableTimeslots!] @relation
 }
 
-type Interest {
-  id: ID!
-  name: String!
-}
+# type Interest {
+#   id: ID!
+#   name: String!
+# }
 
 type Query {
   allUsers: [User!]!
   allVolunteers: [UserVolunteer!]!
-  interests: [Interest]
+  # interests: [Interest]
 }
